@@ -39,30 +39,6 @@ void setup() {
   Serial.println("Esperando sensores...");
 }
 
-
-void loop() {
-  unsigned long tiempoActual = millis();
-
-  if (tiempoActual - tiempoAnterior >= Intervalo_Lectura) {
-    tiempoAnterior = tiempoActual;
-    leerSensores();
-    mostrarDatos();
-  }
-  
-  if (!regando) {    // Si NO esta regando y la humedad de suelo es menor de la aceptada (tengo que añadir que tambien mida las componentes del aire, de momento solo humedad del suelo) y decida en base a eso)
-    if (humedadSuelo < Umbral_HumedadSuelo && temperatura < TEMP_MAX && humedadAire < HUMEDAD_AIRE_MAX) {
-      iniciarRiego();
-    }
-  } else { // Si esta regando, cuando llegue a los 10 segundos, para
-    if (tiempoActual - tiempoInicioRiego >= Tiempo_Riego) {
-      detenerRiego();
-    }
-  }
-
-  delay(100);
-}
-
-
 void leerSensores() {
   int valorSensor = analogRead(pinHumedadSuelo);  
   humedadSuelo = map(valorSensor, 0 ,4095, 0, 100);
@@ -118,3 +94,28 @@ void detenerRiego() {
 
   Serial.println("Riego detenido");
 }
+
+
+void loop() {
+  unsigned long tiempoActual = millis();
+
+  if (tiempoActual - tiempoAnterior >= Intervalo_Lectura) {
+    tiempoAnterior = tiempoActual;
+    leerSensores();
+    mostrarDatos();
+  }
+  
+  if (!regando) {    // Si NO esta regando y la humedad de suelo es menor de la aceptada (tengo que añadir que tambien mida las componentes del aire, de momento solo humedad del suelo) y decida en base a eso)
+    if (humedadSuelo < Umbral_HumedadSuelo && temperatura < TEMP_MAX && humedadAire < HUMEDAD_AIRE_MAX) {
+      iniciarRiego();
+    }
+  } else { // Si esta regando, cuando llegue a los 10 segundos, para
+    if (tiempoActual - tiempoInicioRiego >= Tiempo_Riego) {
+      detenerRiego();
+    }
+  }
+
+  delay(100);
+}
+
+
