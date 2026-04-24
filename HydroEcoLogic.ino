@@ -1,3 +1,5 @@
+// Disclaimer: not final code, some thing will change in the future, this is just a MVP
+
 // declaracion de pines
 
 const int pinHumedadSuelo = 1;
