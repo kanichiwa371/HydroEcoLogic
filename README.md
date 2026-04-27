@@ -80,9 +80,9 @@ Antes de empezar, necesitarás:
 
 > ¿Cómo conecto la placa a la red?
 > Cuando la placa se encienda, creara una red a la cual necesitaremos conectarnos mediante el siguiente procedimiento
-> 1.- La placa al encenderse creara una red llamada "HydroEcoLogic", desconectamos la WiFi y los datos del móvil, y nos conectamos a la red, creara una web en la IP 192.168.4.1, buscaremos en el navegador: "http://192.168.4.1", si no estamos conectados a esta red que crea la placa, no podremos entrar.
-> 2.- Una vez en el portal, pulsaremos la opción de "Configure WiFi", seleccionaremos nuestra Red y pondremos la contraseña.
-> 3.- La placa se conectara automáticamente y guardara la WiFi para próximas veces.
+>  - La placa al encenderse creara una red llamada "HydroEcoLogic", desconectamos la WiFi y los datos del móvil, y nos conectamos a la red, creara una web en la IP 192.168.4.1, buscaremos en el navegador: "http://192.168.4.1", si no estamos conectados a esta red que crea la placa, no podremos entrar.
+> - Una vez en el portal, pulsaremos la opción de "Configure WiFi", seleccionaremos nuestra Red y pondremos la contraseña.
+> - La placa se conectara automáticamente y guardara la WiFi para próximas veces.
 
 **2ºnd paso:** Una vez conectada, necesitaremos coger sitios donde vaya el agua, la tierra (si no lo tenemos, podemos perfectamente diseñarlos en 3D, el tanque de agua, soportes para los componentes...) y conectaremos el tanque con el huerto con tuberias, poniendo la electroválvula y la minibomba en el sistema de tuberías, y llevamos una conexión de la electroválvula hacia la Arduino, ponemos el pin y lo especificamos en el código.
 **3ºer paso:** Instalaremos los sensores, y los conectaremos a la placa arduino, ajustando igual que antes con la electroválvula, los pines en el código.
