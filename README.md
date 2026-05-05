@@ -58,9 +58,9 @@ Una vez tengamos todo esto, empezemos con el proceso de instalación
 
 El sistema opera bajo una lógica basada en umbrales. El ESP32 lee los sensores en **tiempo real**, y decide si es necesario regar, con el código recién descargado del repositorio, **regará en las siguientes condiciones**:
 
-1.- La humedad del suelo es inferior al 30%
-2.- La temperatura ambiente es inferior a 35ºC
-3.- La humedad del aire es inferior al 80%
+1.- La humedad del suelo es inferior al 30%.
+2.- La temperatura ambiente es inferior a 35ºC.
+3.- La humedad del aire es inferior al 80%.
 
 Estas condiciones de riego **evita** que se riegue ineficientemente, pero si crees que es necesario, tu mismo puedes abrir el sistema de riego desde tu móvil. 
 
