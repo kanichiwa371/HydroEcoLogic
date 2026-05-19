@@ -8,19 +8,18 @@
 Ticker timerRiego;
 
 
-#define BOT_TOKEN "" // Tu token aqui
-#define CHAT_ID "" // Tu chatId aqui (si no sabes conseguirlo, mira el README.md)
+#define BOT_TOKEN "" // TU TOKEN AQUI
+#define CHAT_ID "" // TU ID AQUI
 
 WiFiClientSecure cliente;
 UniversalTelegramBot bot(BOT_TOKEN, cliente);
 
-// VARIABLES UNIVERSALES
 
-const int pinHumedadSuelo = ;
-const int pinHumedadAire = ;
-const int pinTemperatura = ;   // Tus pines aqui
-const int pinElectroBomba = ;
-const int pinElectroValvula = ;
+const int pinHumedadSuelo = 34;
+const int pinHumedadAire = 35;
+const int pinTemperatura = 36;
+const int pinElectroBomba = 26;
+const int pinElectroValvula = 27;
 
 
 float humedadSuelo = 0;
@@ -58,7 +57,7 @@ void setup() {
   pinMode(pinElectroBomba, OUTPUT);
   pinMode(pinElectroValvula, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(pinElectroBomba, LOW);
+  digitalWrite(pinElectroBomba, LOW);   // Apagado al inicio
   digitalWrite(pinElectroValvula, LOW);
 
   WiFiManager wifiManager;
@@ -79,7 +78,7 @@ void loop() {
 
   if (regando && (ahora >= tiempoFinRiego)) {
     regando = false;
-    digitalWrite(pinElectroBomba, LOW);
+    digitalWrite(pinElectroBomba, LOW);    // Apagar
     digitalWrite(pinElectroValvula, LOW);
     Serial.println(">>> ⏹️ RIEGO DETENIDO POR TIEMPO <<<");
     bot.sendMessage(CHAT_ID, "⏹️ Riego detenido (15s cumplidos)");
@@ -161,7 +160,7 @@ void iniciarRiego(String origen) {
   tiempoInicioRiego = millis();
   tiempoFinRiego = tiempoInicioRiego + TIEMPO_RIEGO;
 
-  digitalWrite(pinElectroBomba, HIGH);
+  digitalWrite(pinElectroBomba, HIGH);   
   digitalWrite(pinElectroValvula, HIGH);
 
   Serial.print(">>> 💧 RIEGO INICIADO (");
@@ -239,6 +238,7 @@ void manejarComandos() {
         bot.sendMessage(chatId, "⚠️ Sensores no detectados. No se puede regar manualmente.");
       } else if (!regando) {
         iniciarRiego("manual (Telegram)");
+        bot.sendMessage(chatId, "💧 Riego manual iniciado");
       } else {
         bot.sendMessage(chatId, "⚠️ Ya hay un riego en curso");
       }
