@@ -57,7 +57,7 @@ void setup() {
   pinMode(pinElectroBomba, OUTPUT);
   pinMode(pinElectroValvula, OUTPUT);
   pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(pinElectroBomba, LOW);   // Apagado al inicio
+  digitalWrite(pinElectroBomba, LOW);   
   digitalWrite(pinElectroValvula, LOW);
 
   WiFiManager wifiManager;
@@ -78,7 +78,7 @@ void loop() {
 
   if (regando && (ahora >= tiempoFinRiego)) {
     regando = false;
-    digitalWrite(pinElectroBomba, LOW);    // Apagar
+    digitalWrite(pinElectroBomba, LOW);   
     digitalWrite(pinElectroValvula, LOW);
     Serial.println(">>> ⏹️ RIEGO DETENIDO POR TIEMPO <<<");
     bot.sendMessage(CHAT_ID, "⏹️ Riego detenido (15s cumplidos)");
