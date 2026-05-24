@@ -3,6 +3,12 @@
 # HydroEcoLogic
 Importante antes de empezar, este proyecto es de **código abierto** bajo la licencia **MIT**, puedes usarlo, modificarlo y distribuirlo libremente
 
+## Reconocimientos oficiales a este código
+Este proyecto fue galardonado en **STEAM Future 2026**, la feria de ciencia y tecnología más importante de Canarias, organizada por el Parque Científico y Tecnológico de Tenerife (PCTT) y el Gobierno de Canarias.
+
+- Ganador del **premio absoluto** de la categoria **Bachillerato** 
+- **Mención Honorífica** en esta misma edición
+
 ## ¿Qué es HydroEcoLogic?
 
 **HydroEcoLogic** es un algoritmo capaz de ajustarse a un tipo de cultivo, y regarlo **automáticamente** cuando sea necesario, permitiendo una mejora en la calidad de vida de los agricultores
@@ -134,3 +140,6 @@ Una vez configurado, puedes usar estos comandos desde el móvil:
 | `/estado` | Muestra humedad, temperatura y estado del riego |
 
 Listo, tenemos nuestro propio HydroEcoLogic listo para probar, cambiar, manipular o lo que quieras hacer.
+
+
+## Reconocimi
